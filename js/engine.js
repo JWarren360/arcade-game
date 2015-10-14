@@ -94,7 +94,7 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
-        //player.update();
+        player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -119,6 +119,7 @@ var Engine = (function(global) {
             numCols = 5,
             row, col;
 
+
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
          * portion of the "grid"
@@ -137,6 +138,7 @@ var Engine = (function(global) {
         }
 
 
+
         renderEntities();
     }
 
@@ -152,7 +154,7 @@ var Engine = (function(global) {
             enemy.render();
         });
 
-        //player.render();
+        player.render();
     }
 
     /* This function does nothing but it could have been a good place to
