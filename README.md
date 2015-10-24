@@ -1,6 +1,14 @@
 frontend-nanodegree-arcade-game
 ===============================
+How to Start Game
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+You can load the game either of twos ways.
+	1. Go to http://jwarren360.github.io/arcade-game/
+	or
+	2. Clone the repository to your own computer and open
+		the index.html file
+How to Play
 
-for self-checking their submission.
+	1.Use arrow keys to control your character
+	2.Avoid bugs
+	3.Win by making it to the water

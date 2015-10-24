@@ -1,10 +1,9 @@
 var winning = document.getElementById('win');
-var losing = document.getElementById('lose')
-
+var losing = document.getElementById('lose');
 function winLose() {
     //Test for gap between player hitbox and allEnemies
     //Lose Test
-    for (var i = 0; i < allEnemies.length; i++) {
+    for(var i = 0; i < allEnemies.length; i++) {
         if ((player.left < allEnemies[i].right) &&
             (player.right > allEnemies[i].left) &&
             (player.top < allEnemies[i].bottom) &&
@@ -54,7 +53,7 @@ var Enemy = function() {
         this.xLocation();
         this.yLocation();
         this.resetBox();
-    }
+    };
     this.speed = 100; //regular 100
     this.sprite = 'images/enemy-bug.png';
     this.resetPos();
@@ -98,9 +97,9 @@ var Player = function() {
         this.x = 200;
         this.y = 322;
         this.resetBox();
-    }
+    };
     this.resetPos();
-}
+};
 
 Player.prototype.update = function() {
     //////Nothing here!!
