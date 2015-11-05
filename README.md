@@ -1,5 +1,5 @@
 frontend-nanodegree-arcade-game
-===============================
+================================
 How to Start Game
 
 You can load the game either of twos ways.
