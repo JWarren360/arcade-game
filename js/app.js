@@ -1,23 +1,5 @@
 var winning = document.getElementById('win');
 var losing = document.getElementById('lose');
-function winLose() {
-    //Test for gap between player hitbox and allEnemies
-    //Lose Test
-    for(var i = 0; i < allEnemies.length; i++) {
-        if ((player.left < allEnemies[i].right) &&
-            (player.right > allEnemies[i].left) &&
-            (player.top < allEnemies[i].bottom) &&
-            (player.bottom > allEnemies[i].top)) {
-            console.log("lose"); //Debugging Only
-            //Add to lose score and post to html tag
-            player.lose++;
-            losing.innerHTML = player.lose;
-            player.resetPos();
-        }
-    }
-
-}
-
 // Enemies player must avoid
 var Enemy = function() {
     //intital X corinate completely random
