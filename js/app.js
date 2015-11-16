@@ -4,10 +4,16 @@ var losing = document.getElementById('lose');
 var Enemy = function() {
     //intital X corinate completely random
     this.x = (Math.random() * 505) * (Math.random() < 0.5 ? -1 : 1);
-    switch(Math.floor((Math.random() * 3) + 1)) {
-        case 1 : this.y = 61; break;
-        case 2 : this.y = 145; break;
-        case 3 : this.y=229; break;
+    switch (Math.floor((Math.random() * 3) + 1)) {
+        case 1:
+            this.y = 61;
+            break;
+        case 2:
+            this.y = 145;
+            break;
+        case 3:
+            this.y = 229;
+            break;
     }
     this.left = this.x + 3;
     this.right = this.x + 99;
@@ -22,10 +28,16 @@ var Enemy = function() {
 Enemy.prototype.update = function(dt) {
     //Desides what path Enemy will take randomly
     this.yLocation = function() {
-        switch(Math.floor((Math.random() * 3) + 1)) {
-            case 1 : this.y = 61; break;
-            case 2 : this.y = 145; break;
-            case 3 : this.y=229; break;
+        switch (Math.floor((Math.random() * 3) + 1)) {
+            case 1:
+                this.y = 61;
+                break;
+            case 2:
+                this.y = 145;
+                break;
+            case 3:
+                this.y = 229;
+                break;
         }
     };
     //sets Enemy X location randomly but off screen
@@ -49,7 +61,6 @@ Enemy.prototype.update = function(dt) {
         this.resetPos();
     }
     this.resetBox();
-    //winLose();
 };
 
 // Draw the enemy on the screen
@@ -83,30 +94,30 @@ Player.prototype.update = function() {
         this.resetBox();
     };
     this.win = function() {
-        if (player.y < 50) {
+        if (this.y < 50) {
             console.log("You Win!!"); //Debug Only
             //Add to win score and post to html tag
-            player.winCount++;
-            winning.innerHTML = player.winCount;
-            player.resetPos();
+            this.winCount++;
+            winning.innerHTML = this.winCount;
+            this.resetPos();
         }
     };
     this.lose = function() {
         //Test for gap between player hitbox and allEnemies
         //Lose Test
-        for(var i = 0; i < allEnemies.length; i++) {
-            if ((player.left < allEnemies[i].right) &&
-                (player.right > allEnemies[i].left) &&
-                (player.top < allEnemies[i].bottom) &&
-                (player.bottom > allEnemies[i].top)) {
+        for (var i = 0; i < allEnemies.length; i++) {
+            if ((this.left < allEnemies[i].right) &&
+                (this.right > allEnemies[i].left) &&
+                (this.top < allEnemies[i].bottom) &&
+                (this.bottom > allEnemies[i].top)) {
                 //Add to lose score and post to html tag
-                player.loseCount++;
-                losing.innerHTML = player.loseCount;
-                player.resetPos();
+                this.loseCount++;
+                losing.innerHTML = this.loseCount;
+                this.resetPos();
             }
         }
     };
-       this.lose();
+    this.lose();
 };
 
 Player.prototype.render = function() {
@@ -115,7 +126,7 @@ Player.prototype.render = function() {
 
 //Modifies Player's X and Y based on keyboard input
 Player.prototype.handleInput = function(test) {
-    switch (test){
+    switch (test) {
         case 'up':
             this.y -= 83;
             break;
@@ -141,7 +152,7 @@ Player.prototype.handleInput = function(test) {
 //creating enemies
 var allEnemies = [];
 for (var i = 0; i < 10; i++) {
-    allEnemies.push(new Enemy);
+    allEnemies.push(new Enemy());
 }
 
 //Creating player
